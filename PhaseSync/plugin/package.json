@@ -1,0 +1,27 @@
+{
+  "name": "phasesync-cursor-plugin",
+  "version": "0.1.0",
+  "publisher": "adlsconsulting",
+  "engines": {
+    "cursor": "^1.10.0"
+  },
+  "activationEvents": [
+    "onCommand:phasesync.runAnalysis"
+  ],
+  "main": "out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "phasesync.runAnalysis",
+        "title": "Run PhaseSync Weight Analysis"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "esbuild src/extension.ts --bundle --outfile=out/extension.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.17.0"
+  },
+  "license": "MIT"
+}
