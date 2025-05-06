@@ -34,7 +34,7 @@ ADLS Consulting will respond with:
  🚀 Quick Start
 
  1. Clone the Repository
-git clone https://github.com/Donald-Watts/phasesync-cursor-plugin.git
+git clone https://github.com/Donald-Watts/PhaseSync.git
 cd phasesync-cursor-plugin
 
  2. Install Dependencies
