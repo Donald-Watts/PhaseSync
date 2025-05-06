@@ -1,9 +1,10 @@
 # PhaseSync
 PhaseSync CLI &amp; Plugin Tool – Built to help developers and non-coders orchestrate intelligent AI systems.
-👋 Hi, I'm Don Watts
-I'm a small business owner, tech innovator, and founder of ADLS Consulting.
 
-🔧 Currently building:
+ Hi, I'm Donald Watts
+I'm a small business owner, tech innovator, and founder of ADLS Consulting. 
+
+ Currently building:
 PhaseSync – A developer tool to compress, weight, and auto-organize large-scale AI systems, making intelligent orchestration possible in any IDE. Available as a CLI utility and Cursor-compatible plugin.                   
  Features:
 * Symbolic Weight Analysis for project phases
@@ -13,9 +14,9 @@ PhaseSync – A developer tool to compress, weight, and auto-organize large-scal
 * CLI compatibility with Python backend
 * Seamlessly integrates with Cursor IDE
 
-💡 I believe in making powerful tools simple, and giving developers — and non-developers — the ability to build scalable, intelligent systems without being overwhelmed by code.
+ I believe in making powerful tools simple, and giving developers — and non-developers — the ability to build scalable, intelligent systems without being overwhelmed by code.
 
-📫 Want to collaborate, license, or contribute? Email: limited.adls@gmail.com
+ Want to collaborate, license, or contribute? Email: limited.adls@gmail.com
 License inquiries welcome (Apache 2.0 – commercial use requires approval).
 To request permission for commercial use:
 
@@ -31,7 +32,7 @@ ADLS Consulting will respond with:
 * Optional licensing fee (if applicable)
 * A license key or usage agreement
 
- 🚀 Quick Start
+  Quick Start
 
  1. Clone the Repository
 git clone https://github.com/Donald-Watts/PhaseSync.git
@@ -49,7 +50,7 @@ npm run build
 * Load this local plugin folder
 * Use command palette: `Run PhaseSync Weight Analysis`
 
- ⚙️ Python CLI Support (Optional)
+  Python CLI Support (Optional)
 Install the CLI tools:
 pip install -r requirements.txt
 python setup.py install
