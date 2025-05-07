@@ -11,11 +11,46 @@ PhaseSync implements the Symbolic Weight Protocol (SWP), a system that compresse
 - Semantic phase mapping
 - Visual compression analysis
 
-## Installation
+## Quick Start
 
-```bash
-pip install -e .
-```
+1. **Installation**
+   ```bash
+   # Clone the repository
+   git clone https://github.com/Donald-Watts/PhaseSync.git
+   cd PhaseSync
+
+   # Create and activate virtual environment
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+
+   # Install the package
+   pip install -e .
+   ```
+
+2. **Basic Usage**
+   ```python
+   from PhaseSync.symbol_compressor import compress_word, analyze_phase
+
+   # Compress a single word
+   weight = compress_word("Python")  # Returns 8
+
+   # Analyze a development phase
+   phase_info = analyze_phase("Core Feature Development")
+   print(phase_info)
+   # Output: {'weight': 8, 'description': 'Main functionality implementation'}
+   ```
+
+3. **CLI Usage**
+   ```bash
+   # Compress a word
+   phasesync compress "Python"
+
+   # Analyze a phase
+   phasesync analyze "Core Feature Development"
+
+   # Visualize compression
+   phasesync visualize "Python"
+   ```
 
 ## Core Components
 
@@ -44,27 +79,61 @@ Tools for analyzing and displaying compression:
 - Phase weight reporting
 - Bidirectional phase/weight lookup
 
-## Usage
+## Detailed Usage
 
-### Basic Compression
+### 1. Word Compression
 ```python
 from PhaseSync.symbol_compressor import compress_word
 
-# Compress a single word
+# Basic compression
 weight = compress_word("Python")  # Returns 8
+
+# Compound words
+weight = compress_word("Web Development")  # Returns 7
+
+# With custom mapping
+weight = compress_word("Python", custom_map={"P": 10})  # Returns 9
 ```
 
-### Phase Tagging
+### 2. Phase Analysis
+```python
+from PhaseSync.symbol_compressor import analyze_phase
+
+# Analyze a phase
+phase_info = analyze_phase("Core Feature Development")
+print(phase_info)
+# Output: {'weight': 8, 'description': 'Main functionality implementation'}
+
+# Get all phases for a weight
+phases = analyze_phase(weight=8)
+print(phases)
+# Output: ['Foundation and Definition', 'Core Feature Development', 'Finalization and Product']
+```
+
+### 3. Phase Tagging
 ```python
 # In your code files:
 # @phase:core
 # @task:build_web_ui
 # @weight:high
+
+# Extract tags from code
+from PhaseSync.symbol_compressor import extract_phase_tags
+
+tags = extract_phase_tags("""
+# @phase:core
+# @task:build_web_ui
+# @weight:high
+def build_ui():
+    pass
+""")
+print(tags)
+# Output: {'phase': 'core', 'task': 'build_web_ui', 'weight': 'high'}
 ```
 
-### Visualization
+### 4. Visualization
 ```python
-from PhaseSync.visualizer import visualize_compression
+from PhaseSync.visualizer import visualize_compression, generate_phase_report
 
 # Show compression steps
 print(visualize_compression("Python"))
@@ -73,6 +142,11 @@ print(visualize_compression("Python"))
 # P(16) + Y(25) + T(20) + H(8) + O(15) + N(14) = 98
 # 9 + 8 = 17
 # 1 + 7 = 8
+
+# Generate phase report
+report = generate_phase_report("Core Feature Development")
+print(report)
+# Output: Detailed phase analysis with weight and related phases
 ```
 
 ## Development Phases
@@ -118,7 +192,11 @@ PhaseSync recognizes these key development phases:
 
 Run the test suite:
 ```bash
+# Run all tests
 python -m unittest discover PhaseSync/tests
+
+# Run with coverage
+pytest --cov=PhaseSync
 ```
 
 ## Contributing
@@ -129,6 +207,8 @@ python -m unittest discover PhaseSync/tests
 4. Ensure all tests pass
 5. Submit a pull request
 
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
+
 ## License
 
-MIT License - See LICENSE file for details 
+Apache License 2.0 - See [LICENSE](LICENSE) file for details 
