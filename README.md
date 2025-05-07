@@ -7,7 +7,7 @@ I'm a small business owner, tech innovator, and founder of ADLS Consulting.
  Currently building:
 PhaseSync – A developer tool to compress, weight, and auto-organize large-scale AI systems, making intelligent orchestration possible in any IDE. Available as a CLI utility and Cursor-compatible plugin.                   
  Features:
-* Symbolic Weight Analysis for project phases
+* Semantic Weight Analysis for project phases
 * Lightweight compression using alphabetic numerics (A=1 to Z=26)
 * Auto-sums and phase-based scoring
 * Highlights critical files and design sequences
