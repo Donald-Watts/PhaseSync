@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.py
+PhaseSync/__init__.py
+phasesync.egg-info/PKG-INFO
+phasesync.egg-info/SOURCES.txt
+phasesync.egg-info/dependency_links.txt
+phasesync.egg-info/entry_points.txt
+phasesync.egg-info/requires.txt
+phasesync.egg-info/top_level.txt

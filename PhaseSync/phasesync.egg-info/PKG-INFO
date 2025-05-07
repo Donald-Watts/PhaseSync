@@ -1,0 +1,47 @@
+Metadata-Version: 2.4
+Name: phasesync
+Version: 0.1.0
+Summary: A symbolic compression and architectural phase-weighting tool for intelligent codebase management.
+Home-page: https://github.com/adlsconsulting/phasesync
+Author: ADLS Consulting
+Author-email: limited.adls@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: click>=8.0.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# PhaseSync
+
+A symbolic compression and architectural phase-weighting tool for intelligent codebase management.
+
+## Installation
+
+```bash
+pip install -e .
+```
+
+## Usage
+
+```bash
+phasesync <project_directory>
+```
+
+## Features
+
+- Symbolic Weight Analysis for project phases
+- Lightweight compression using alphabetic numerics (A=1 to Z=26)
+- Auto-sums and phase-based scoring
+- Highlights critical files and design sequences
+- CLI compatibility with Python backend
+- Seamlessly integrates with Cursor IDE 
