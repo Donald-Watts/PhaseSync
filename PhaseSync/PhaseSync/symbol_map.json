@@ -1,19 +1,19 @@
 {
     "8": [
-        "Foundation and Definition",
-        "Core Feature Development",
-        "Finalization and Product"
+        ["Foundation and Definition", 287],
+        ["Core Feature Development", 198],
+        ["Finalization and Product", 245]
     ],
     "2": [
-        "Blueprint and Canonical Structure"
+        ["Blueprint and Canonical Structure", 245]
     ],
     "6": [
-        "Scaffolding and Schema Definition"
+        ["Scaffolding and Schema Definition", 198]
     ],
     "7": [
-        "Intelligence Learning Test Suites"
+        ["Intelligence Learning Test Suites", 245]
     ],
     "9": [
-        "User Interface and Orchestration"
+        ["User Interface and Orchestration", 287]
     ]
 } 

@@ -1,33 +1,3 @@
-Metadata-Version: 2.4
-Name: phasesync
-Version: 1.0.0
-Summary: A tool for managing and tracking codebases using the Symbolic Weight Protocol (SWP)
-Home-page: https://github.com/yourusername/phasesync
-Author: Your Name
-Author-email: your.email@example.com
-Classifier: Development Status :: 4 - Beta
-Classifier: Intended Audience :: Developers
-Classifier: License :: OSI Approved :: MIT License
-Classifier: Programming Language :: Python :: 3
-Classifier: Programming Language :: Python :: 3.7
-Classifier: Programming Language :: Python :: 3.8
-Classifier: Programming Language :: Python :: 3.9
-Classifier: Programming Language :: Python :: 3.10
-Requires-Python: >=3.7
-Description-Content-Type: text/markdown
-License-File: LICENSE
-Requires-Dist: click>=8.0.0
-Dynamic: author
-Dynamic: author-email
-Dynamic: classifier
-Dynamic: description
-Dynamic: description-content-type
-Dynamic: home-page
-Dynamic: license-file
-Dynamic: requires-dist
-Dynamic: requires-python
-Dynamic: summary
-
 # PhaseSync
 
 PhaseSync is a powerful tool for managing and tracking codebases using the Symbolic Weight Protocol (SWP). It provides a deterministic way to convert text into single-digit weights while preserving semantic meaning, making it easier for both AI and human developers to understand and navigate codebases.
@@ -91,9 +61,9 @@ The SWP works through these steps:
 
 Example:
 ```
-"Python" â†’ P(16) + Y(25) + T(20) + H(8) + O(15) + N(14) = 98
-98 â†’ 9 + 8 = 17
-17 â†’ 1 + 7 = 8
+"Python" → P(16) + Y(25) + T(20) + H(8) + O(15) + N(14) = 98
+98 → 9 + 8 = 17
+17 → 1 + 7 = 8
 Total sum (98) used as tie breaker if reduced sum matches another word
 ```
 
@@ -106,8 +76,8 @@ When two phases have the same reduced sum, PhaseSync uses the total sum as a tie
 Example:
 ```
 Weight 8:
-  â€¢ Foundation and Definition (Total: 287)
-  â€¢ Core Feature Development (Total: 198)
+  • Foundation and Definition (Total: 287)
+  • Core Feature Development (Total: 198)
 ```
 In this case, "Foundation and Definition" is considered more significant due to its higher total sum.
 

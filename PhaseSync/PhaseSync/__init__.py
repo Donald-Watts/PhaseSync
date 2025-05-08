@@ -1,3 +1,9 @@
+"""
+PhaseSync Package
+
+A tool for managing and tracking codebases using the Symbolic Weight Protocol (SWP).
+"""
+
 import os
 import click
 from typing import Dict, List, Tuple
@@ -6,7 +12,15 @@ from .symbol_compressor import (
     analyze_file_complexity, 
     compress, 
     compress_word,
-    extract_phase_tags
+    extract_phase_tags,
+    create_compressed_map
+)
+
+from .visualizer import (
+    visualize_compression,
+    visualize_phase_weights,
+    get_phase_by_weight,
+    get_weight_by_phase
 )
 
 logging.basicConfig(level=logging.INFO)
@@ -144,6 +158,19 @@ def main(project_path: str, scan_tags: bool, generate_prompt: bool):
                 for file, file_tags in tags.items():
                     if 'task' in file_tags:
                         click.echo(f"  - {file_tags['task']}")
+
+__version__ = '1.0.0'
+__all__ = [
+    'compress_word',
+    'compress',
+    'analyze_file_complexity',
+    'extract_phase_tags',
+    'create_compressed_map',
+    'visualize_compression',
+    'visualize_phase_weights',
+    'get_phase_by_weight',
+    'get_weight_by_phase'
+]
 
 if __name__ == '__main__':
     main() 

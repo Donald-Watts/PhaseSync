@@ -1,7 +1,16 @@
+LICENSE
 README.md
 pyproject.toml
 setup.py
 PhaseSync/__init__.py
+PhaseSync/__main__.py
+PhaseSync/symbol_compressor.py
+PhaseSync/visualizer.py
+PhaseSync/tests/__init__.py
+PhaseSync/tests/conftest.py
+PhaseSync/tests/test_integration.py
+PhaseSync/tests/test_symbol_compressor.py
+PhaseSync/tests/test_visualizer.py
 phasesync.egg-info/PKG-INFO
 phasesync.egg-info/SOURCES.txt
 phasesync.egg-info/dependency_links.txt

@@ -10,17 +10,13 @@ The SWP works through these steps:
 2. Sum the numbers
 3. Reduce to a single digit by summing digits
 4. For compound words, handle each part separately
+5. Use total sum as tie breaker when reduced sums match
 
 Example:
     "Python" → P(16) + Y(25) + T(20) + H(8) + O(15) + N(14) = 98
     98 → 9 + 8 = 17
     17 → 1 + 7 = 8
-
-This creates a consistent, reversible mapping that can be used to:
-- Identify development phases
-- Track project progress
-- Guide AI tools
-- Minimize context tokens
+    Total sum (98) used as tie breaker if reduced sum matches another word
 """
 
 from typing import Tuple, Dict
@@ -66,55 +62,59 @@ def reduce_number(num: int) -> int:
         num = sum(int(digit) for digit in str(num))
     return num
 
-def compress_word(word: str) -> int:
+def compress_word(word: str) -> Tuple[int, int]:
     """
     Compress a word using the Symbolic Weight Protocol.
     
     For single words:
     - Calculate total letter values
     - Reduce once to get final value
+    - Return both reduced and total sum for tie breaking
     
     For compound words (with underscores or spaces):
     - Split into parts
-    - Sum each part separately
-    - Reduce the final sum
+    - Calculate reduced sum for each part
+    - Sum the reduced values
+    - Return both final sum and original total
     
     Args:
         word: The word to compress
         
     Returns:
-        A single-digit weight (0-9)
+        A tuple of (reduced, total) where:
+        - reduced is the single-digit weight (0-9)
+        - total is the sum of reduced values (for tie breaking)
         
     Example:
         >>> compress_word("Python")
-        8  # P(16) + Y(25) + T(20) + H(8) + O(15) + N(14) = 98 → 17 → 8
+        (8, 98)  # P(16) + Y(25) + T(20) + H(8) + O(15) + N(14) = 98 → 17 → 8
         >>> compress_word("build_web_ui")
-        9  # build(7) + web(8) + ui(3) = 18 → 9
+        (9, 18)  # build(7) + web(8) + ui(3) = 18 → 9
     """
     # Handle compound words (with underscores or spaces)
     parts = word.replace('_', ' ').split()
     
     if not parts:
-        return 0
+        return 0, 0
     
+    # For single words, calculate total directly
     if len(parts) == 1:
-        # Single word - calculate total and reduce once
         total = sum(get_letter_value(char) for char in parts[0])
-        return reduce_number(total)
+        return reduce_number(total), total
     
-    # Multiple parts - handle each part separately
+    # For compound words, calculate reduced sum for each part
+    reduced_values = []
     total = 0
     for part in parts:
-        # Calculate letter values for this part
         part_sum = sum(get_letter_value(char) for char in part)
-        # Reduce this part's sum
-        part_sum = reduce_number(part_sum)
-        total += part_sum
+        reduced = reduce_number(part_sum)
+        reduced_values.append(reduced)
+        total += reduced
     
-    # Final reduction
-    return reduce_number(total)
+    # Return the reduced total and original total
+    return total if total < 10 else reduce_number(total), total
 
-def compress(text: str) -> Tuple[int, int]:
+def compress(text: str) -> Tuple[int, int, int]:
     """
     Compress text using the Symbolic Weight Protocol.
     
@@ -122,21 +122,22 @@ def compress(text: str) -> Tuple[int, int]:
         text: The text to compress
         
     Returns:
-        A tuple of (mass, reduced) where:
+        A tuple of (mass, reduced, total) where:
         - mass is the sum of all letter values
         - reduced is the single-digit reduction of mass
+        - total is the original mass (for tie breaking)
         
     Example:
         >>> compress("Python is great")
-        (287, 8)  # 287 → 17 → 8
+        (287, 8, 287)  # 287 → 17 → 8
     """
     # Calculate mass (sum of all letter values)
     mass = sum(get_letter_value(char) for char in text)
     # Calculate reduced digit
     reduced = reduce_number(mass)
-    return mass, reduced
+    return mass, reduced, mass
 
-def analyze_file_complexity(file_path: str) -> Tuple[int, int]:
+def analyze_file_complexity(file_path: str) -> Tuple[int, int, int]:
     """
     Analyze a file's complexity using SWP.
     
@@ -144,11 +145,12 @@ def analyze_file_complexity(file_path: str) -> Tuple[int, int]:
         file_path: Path to the file to analyze
         
     Returns:
-        A tuple of (mass, reduced) representing the file's complexity
+        A tuple of (mass, reduced, total) representing the file's complexity
+        where total is used as a tie breaker when reduced values match
         
     Example:
         >>> analyze_file_complexity("src/main.py")
-        (1234, 1)  # 1234 → 10 → 1
+        (1234, 1, 1234)  # 1234 → 10 → 1
     """
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
@@ -156,7 +158,7 @@ def analyze_file_complexity(file_path: str) -> Tuple[int, int]:
             return compress(content)
     except Exception as e:
         print(f"Error analyzing file {file_path}: {e}")
-        return 0, 0
+        return 0, 0, 0
 
 def extract_phase_tags(content: str) -> Dict[str, str]:
     """
@@ -186,7 +188,7 @@ def extract_phase_tags(content: str) -> Dict[str, str]:
     
     return tags
 
-def create_compressed_map(tags: Dict[str, str]) -> Dict[str, str]:
+def create_compressed_map(tags: Dict[str, str]) -> Dict[str, Tuple[str, int]]:
     """
     Create a compressed mapping of tags.
     
@@ -194,14 +196,15 @@ def create_compressed_map(tags: Dict[str, str]) -> Dict[str, str]:
         tags: Dictionary of tag types to their values
         
     Returns:
-        A dictionary mapping compressed keys to original values
+        A dictionary mapping compressed keys to (original value, total sum) tuples
+        where total sum is used for tie breaking
         
     Example:
         >>> create_compressed_map({'task': 'build_web_ui'})
-        {'task_9': 'build_web_ui'}
+        {'task_9': ('build_web_ui', 18)}
     """
     compressed = {}
     for tag_type, value in tags.items():
-        compressed_value = compress_word(value)
-        compressed[f"{tag_type}_{compressed_value}"] = value
+        reduced, total = compress_word(value)
+        compressed[f"{tag_type}_{reduced}"] = (value, total)
     return compressed 
