@@ -1,60 +1,96 @@
-# PhaseSync
-PhaseSync CLI &amp; Plugin Tool – Built to help developers and non-coders orchestrate intelligent AI systems.
+PhaseSync v0.1.0 Release
+Overview
+PhaseSync is a groundbreaking semantic compression tool that revolutionizes how we track and manage development phases. By implementing the Symbolic Weight Protocol (SWP), it bridges the gap between semantic understanding and symbolic representation, making phase management more efficient and AI-friendly.
 
- Hi, I'm Donald Watts
-I'm a small business owner, tech innovator, and founder of ADLS Consulting. 
-
- Currently building:
-PhaseSync – A developer tool to compress, weight, and auto-organize large-scale AI systems, making intelligent orchestration possible in any IDE. Available as a CLI utility and Cursor-compatible plugin.                   
- Features:
-* Symbolic and Semantic Weight Analysis for project phases
-* Lightweight compression using alphabetic numerics (A=1 to Z=26)
-* Auto-sums and phase-based scoring
-* Highlights critical files and design sequences
-* CLI compatibility with Python backend
-* Seamlessly integrates with Cursor IDE
-
- I believe in making powerful tools simple, and giving developers — and non-developers — the ability to build scalable, intelligent systems without being overwhelmed by code.
-
- Want to collaborate, license, or contribute? Email: limited.adls@gmail.com
-License inquiries welcome (Apache 2.0 – commercial use requires approval).
-To request permission for commercial use:
-
-1. Email: [limited.adls@gmail.com]
-2. Subject: `PhaseSync Commercial Use Request`
-3. Include:
-   * Your name, organization, and role
-   * Description of commercial use
-   * Expected scope and duration
-
-ADLS Consulting will respond with:
-* Approval and attribution terms
-* Optional licensing fee (if applicable)
-* A license key or usage agreement
-
-  Quick Start
-
- 1. Clone the Repository
+Key Features
+1. Semantic Compression
+Converts development phases into single-digit weights while preserving meaning
+Implements letter-to-number mapping (A=1 to Z=26)
+Reduces complex phase descriptions to manageable symbolic weights
+Maintains semantic relationships between phases
+2. Phase Management
+Standardized phase identification across projects
+Seven core development phases with consistent weights
+Phase tagging system (@phase, @task, @weight)
+Bidirectional phase/weight lookup
+3. Visualization Tools
+Step-by-step compression visualization
+Phase weight reporting
+Interactive phase analysis
+Custom visualization exports
+4. Developer Tools
+Command-line interface for quick operations
+Python API for programmatic access
+Comprehensive test suite
+Type hints and documentation
+Technical Highlights
+Core Components
+Symbol Compressor: Implements SWP algorithm
+Symbol Map: JSON-based phase-to-weight mappings
+Visualizer: Analysis and display tools
+CLI: Command-line interface
+Development Phases
+Foundation and Definition (8)
+Blueprint and Canonical Structure (2)
+Scaffolding and Schema Definition (6)
+Core Feature Development (8)
+Intelligence Learning Test Suites (7)
+User Interface and Orchestration (9)
+Finalization and Product (8)
+System Requirements
+Python 3.8+
+Cross-platform compatibility
+Minimal dependencies
+Easy installation
+Use Cases
+1. AI Collaboration
+Reduced token usage in AI communications
+Consistent phase representation
+Semantic preservation in compressed form
+2. Project Management
+Standardized phase tracking
+Visual phase analysis
+Progress monitoring
+3. Code Organization
+Semantic phase tagging
+Phase-based code structure
+Development phase tracking
+4. Team Communication
+Clear phase identification
+Consistent terminology
+Visual phase representation
+Getting Started
+# Installation
 git clone https://github.com/Donald-Watts/PhaseSync.git
-cd phasesync-cursor-plugin
+cd PhaseSync
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+pip install -e .
 
- 2. Install Dependencies
-npm install
+# Basic Usage
+from PhaseSync.symbol_compressor import compress_word
+weight = compress_word("Python")  # Returns 8
+Documentation
+README.md - Project overview and basic usage
+CLI.md - Command-line interface documentation
+API.md - API reference and examples
+QUICKSTART.md - Getting started guide
+Community
+Open source under Apache 2.0 License
+Contributing guidelines available
+Code of conduct established
+Community-driven development
+Future Roadmap
+Enhanced visualization capabilities
+Additional phase templates
+Integration with popular IDEs
+Extended API functionality
+Credits
+Developed by Donald Watts Contact: limited.adls@gmail.com
 
- 3. Build the Plugin
-npm run build
+License
+Apache License 2.0
 
- 4. Launch in Cursor
-* Open Cursor IDE
-* Go to the plugin manager
-* Load this local plugin folder
-* Use command palette: `Run PhaseSync Weight Analysis`
-
-  Python CLI Support (Optional)
-Install the CLI tools:
-pip install -r requirements.txt
-python setup.py install
-Then run from any terminal:
-phasesync your_project_folder/
+This release represents a significant step forward in semantic phase management and AI collaboration. We invite the community to try PhaseSync and contribute to its growth.
 
 For support, open issues on GitHub or reach out to the author.
