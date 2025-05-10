@@ -1,92 +1,107 @@
-PhaseSync v0.1.0 Release
-Overview
-PhaseSync is a groundbreaking semantic compression tool that revolutionizes how we track and manage development phases. By implementing the Symbolic Weight Protocol (SWP), it bridges the gap between semantic understanding and symbolic representation, making phase management more efficient and AI-friendly.
+PhaseSync
+PhaseSync is a powerful tool for managing and tracking codebases using the Symbolic Weight Protocol (SWP). It provides a deterministic way to convert text into single-digit weights while preserving semantic meaning, making it easier for both AI and human developers to understand and navigate codebases.
 
-Key Features
-1. Semantic Compression
-Converts development phases into single-digit weights while preserving meaning
-Implements letter-to-number mapping (A=1 to Z=26)
-Reduces complex phase descriptions to manageable symbolic weights
-Maintains semantic relationships between phases
-2. Phase Management
-Standardized phase identification across projects
-Seven core development phases with consistent weights
-Phase tagging system (@phase, @task, @weight)
+Features
+Symbolic Weight Protocol (SWP)
+Converts text into single-digit weights (0-9)
+Preserves semantic meaning through deterministic compression
+Handles compound words and phrases
+Uses total sum as tie breaker when reduced sums match
+Phase Management
+Automatic phase detection and tagging
+Weight-based phase organization
 Bidirectional phase/weight lookup
-3. Visualization Tools
-Step-by-step compression visualization
-Phase weight reporting
-Interactive phase analysis
-Custom visualization exports
-4. Developer Tools
-Command-line interface for quick operations
-Python API for programmatic access
-Comprehensive test suite
-Type hints and documentation
-Technical Highlights
-Core Components
-Symbol Compressor: Implements SWP algorithm
-Symbol Map: JSON-based phase-to-weight mappings
-Visualizer: Analysis and display tools
-CLI: Command-line interface
-Development Phases
-Foundation and Definition (8)
-Blueprint and Canonical Structure (2)
-Scaffolding and Schema Definition (6)
-Core Feature Development (8)
-Intelligence Learning Test Suites (7)
-User Interface and Orchestration (9)
-Finalization and Product (8)
-System Requirements
-Python 3.8+
-Cross-platform compatibility
-Minimal dependencies
-Easy installation
-Use Cases
-1. AI Collaboration
-Reduced token usage in AI communications
-Consistent phase representation
-Semantic preservation in compressed form
-2. Project Management
-Standardized phase tracking
-Visual phase analysis
-Progress monitoring
-3. Code Organization
-Semantic phase tagging
-Phase-based code structure
-Development phase tracking
-4. Team Communication
-Clear phase identification
-Consistent terminology
-Visual phase representation
-Getting Started
-# Installation
-git clone https://github.com/Donald-Watts/PhaseSync.git
-cd PhaseSync
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-pip install -e .
+Visual phase weight reporting
+Codebase Analysis
+File complexity analysis
+Phase tag extraction
+Symbolic weight calculation
+Tie breaker resolution
+Installation
+pip install phasesync
+Quick Start
+Initialize PhaseSync in your project:
+phasesync init
+Add phase tags to your files:
+# @phase:core
+# @task:build_web_ui
+# @weight:high
+def some_function():
+    pass
+Analyze your project:
+phasesync analyze
+How It Works
+Symbolic Weight Protocol
+The SWP works through these steps:
 
-# Basic Usage
-from PhaseSync.symbol_compressor import compress_word
-weight = compress_word("Python")  # Returns 8
-Documentation
-README.md - Project overview and basic usage
-CLI.md - Command-line interface documentation
-API.md - API reference and examples
-QUICKSTART.md - Getting started guide
-Community
-Open source under Apache 2.0 License
-Contributing guidelines available
-Code of conduct established
-Community-driven development
-Future Roadmap
-Enhanced visualization capabilities
-Additional phase templates
-Integration with popular IDEs
-Extended API functionality
-Credits
-Developed by Donald Watts Contact: limited.adls@gmail.com
+Convert letters to numbers (A=1 to Z=26)
+Sum the numbers
+Reduce to a single digit by summing digits
+For compound words, handle each part separately
+Use total sum as tie breaker when reduced sums match
+Example:
+
+"Python" → P(16) + Y(25) + T(20) + H(8) + O(15) + N(14) = 98
+98 → 9 + 8 = 17
+17 → 1 + 7 = 8
+Total sum (98) used as tie breaker if reduced sum matches another word
+Tie Breaker System
+When two phases have the same reduced sum, PhaseSync uses the total sum as a tie breaker:
+
+Higher total sum indicates more significant phase
+Provides definitive guidance for phase ordering
+Helps resolve ambiguous weight matches
+Example:
+
+Weight 8:
+  • Foundation and Definition (Total: 287)
+  • Core Feature Development (Total: 198)
+In this case, "Foundation and Definition" is considered more significant due to its higher total sum.
+
+Usage
+Command Line Interface
+# Initialize project
+phasesync init
+
+# Analyze project
+phasesync analyze
+
+# Generate phase report
+phasesync report
+
+# Visualize phase weights
+phasesync visualize
+Python API
+from phasesync import compress_word, analyze_file_complexity
+
+# Compress a word
+reduced, total = compress_word("Python")
+print(f"Reduced: {reduced}, Total: {total}")
+
+# Analyze file complexity
+mass, reduced, total = analyze_file_complexity("src/main.py")
+print(f"Mass: {mass}, Reduced: {reduced}, Total: {total}")
+Testing
+Run the test suite:
+
+python -m unittest discover tests
+The test suite verifies:
+
+Letter value calculations
+Word compression
+Number reduction
+Phase tag compression
+Tag extraction
+Deterministic behavior
+Full text compression
+Tie breaker functionality
+Contributing
+Fork the repository
+Create a feature branch
+Commit your changes
+Push to the branch
+Create a Pull Request
+
 
 License
 Apache License 2.0
