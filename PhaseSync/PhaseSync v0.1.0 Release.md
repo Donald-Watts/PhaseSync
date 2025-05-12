@@ -76,7 +76,6 @@ PhaseSync is a groundbreaking semantic compression tool that revolutionizes how 
 
 ## Getting Started
 
-```bash
 # Installation
 git clone https://github.com/Donald-Watts/PhaseSync.git
 cd PhaseSync
@@ -87,7 +86,7 @@ pip install -e .
 # Basic Usage
 from PhaseSync.symbol_compressor import compress_word
 weight = compress_word("Python")  # Returns 8
-```
+
 
 ## Documentation
 - [README.md](README.md) - Project overview and basic usage
@@ -114,6 +113,6 @@ Contact: limited.adls@gmail.com
 ## License
 Apache License 2.0
 
----
+
 
 This release represents a significant step forward in semantic phase management and AI collaboration. We invite the community to try PhaseSync and contribute to its growth.

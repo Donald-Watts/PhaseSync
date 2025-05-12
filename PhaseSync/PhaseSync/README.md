@@ -24,30 +24,30 @@ PhaseSync is a powerful tool for managing and tracking codebases using the Symbo
 
 ## Installation
 
-```bash
+
 pip install phasesync
 ```
 
 ## Quick Start
 
 1. Initialize PhaseSync in your project:
-```bash
+
 phasesync init
-```
+
 
 2. Add phase tags to your files:
-```python
+
 # @phase:core
 # @task:build_web_ui
 # @weight:high
 def some_function():
     pass
-```
+
 
 3. Analyze your project:
-```bash
+
 phasesync analyze
-```
+
 
 ## How It Works
 
@@ -60,12 +60,12 @@ The SWP works through these steps:
 5. Use total sum as tie breaker when reduced sums match
 
 Example:
-```
+
 "Python" → P(16) + Y(25) + T(20) + H(8) + O(15) + N(14) = 98
 98 → 9 + 8 = 17
 17 → 1 + 7 = 8
 Total sum (98) used as tie breaker if reduced sum matches another word
-```
+
 
 ### Tie Breaker System
 When two phases have the same reduced sum, PhaseSync uses the total sum as a tie breaker:
@@ -74,17 +74,17 @@ When two phases have the same reduced sum, PhaseSync uses the total sum as a tie
 - Helps resolve ambiguous weight matches
 
 Example:
-```
+
 Weight 8:
   • Foundation and Definition (Total: 287)
   • Core Feature Development (Total: 198)
-```
+
 In this case, "Foundation and Definition" is considered more significant due to its higher total sum.
 
 ## Usage
 
 ### Command Line Interface
-```bash
+
 # Initialize project
 phasesync init
 
@@ -96,10 +96,10 @@ phasesync report
 
 # Visualize phase weights
 phasesync visualize
-```
+
 
 ### Python API
-```python
+
 from phasesync import compress_word, analyze_file_complexity
 
 # Compress a word
@@ -109,14 +109,14 @@ print(f"Reduced: {reduced}, Total: {total}")
 # Analyze file complexity
 mass, reduced, total = analyze_file_complexity("src/main.py")
 print(f"Mass: {mass}, Reduced: {reduced}, Total: {total}")
-```
+
 
 ## Testing
 
 Run the test suite:
-```bash
+
 python -m unittest discover tests
-```
+
 
 The test suite verifies:
 - Letter value calculations

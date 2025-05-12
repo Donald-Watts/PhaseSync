@@ -14,7 +14,6 @@ PhaseSync implements the Symbolic Weight Protocol (SWP), a system that compresse
 ## Quick Start
 
 1. **Installation**
-   ```bash
    # Clone the repository
    git clone https://github.com/Donald-Watts/PhaseSync.git
    cd PhaseSync
@@ -25,10 +24,8 @@ PhaseSync implements the Symbolic Weight Protocol (SWP), a system that compresse
 
    # Install the package
    pip install -e .
-   ```
 
 2. **Basic Usage**
-   ```python
    from PhaseSync.symbol_compressor import compress_word, analyze_phase
 
    # Compress a single word
@@ -38,10 +35,9 @@ PhaseSync implements the Symbolic Weight Protocol (SWP), a system that compresse
    phase_info = analyze_phase("Core Feature Development")
    print(phase_info)
    # Output: {'weight': 8, 'description': 'Main functionality implementation'}
-   ```
+
 
 3. **CLI Usage**
-   ```bash
    # Compress a word
    phasesync compress "Python"
 
@@ -50,7 +46,7 @@ PhaseSync implements the Symbolic Weight Protocol (SWP), a system that compresse
 
    # Visualize compression
    phasesync visualize "Python"
-   ```
+
 
 ## Core Components
 
@@ -63,7 +59,6 @@ The heart of PhaseSync, implementing the SWP algorithm:
 
 ### Symbol Map
 JSON-based storage of phase-to-weight mappings:
-```json
 {
     "8": ["Foundation and Definition", "Core Feature Development", "Finalization and Product"],
     "2": ["Blueprint and Canonical Structure"],
@@ -71,7 +66,7 @@ JSON-based storage of phase-to-weight mappings:
     "7": ["Intelligence Learning Test Suites"],
     "9": ["User Interface and Orchestration"]
 }
-```
+
 
 ### Visualizer
 Tools for analyzing and displaying compression:
@@ -82,7 +77,6 @@ Tools for analyzing and displaying compression:
 ## Detailed Usage
 
 ### 1. Word Compression
-```python
 from PhaseSync.symbol_compressor import compress_word
 
 # Basic compression
@@ -93,10 +87,9 @@ weight = compress_word("Web Development")  # Returns 7
 
 # With custom mapping
 weight = compress_word("Python", custom_map={"P": 10})  # Returns 9
-```
+
 
 ### 2. Phase Analysis
-```python
 from PhaseSync.symbol_compressor import analyze_phase
 
 # Analyze a phase
@@ -108,10 +101,9 @@ print(phase_info)
 phases = analyze_phase(weight=8)
 print(phases)
 # Output: ['Foundation and Definition', 'Core Feature Development', 'Finalization and Product']
-```
+
 
 ### 3. Phase Tagging
-```python
 # In your code files:
 # @phase:core
 # @task:build_web_ui
@@ -129,10 +121,9 @@ def build_ui():
 """)
 print(tags)
 # Output: {'phase': 'core', 'task': 'build_web_ui', 'weight': 'high'}
-```
+
 
 ### 4. Visualization
-```python
 from PhaseSync.visualizer import visualize_compression, generate_phase_report
 
 # Show compression steps
@@ -147,7 +138,7 @@ print(visualize_compression("Python"))
 report = generate_phase_report("Core Feature Development")
 print(report)
 # Output: Detailed phase analysis with weight and related phases
-```
+
 
 ## Development Phases
 
@@ -191,13 +182,12 @@ PhaseSync recognizes these key development phases:
 ## Testing
 
 Run the test suite:
-```bash
 # Run all tests
 python -m unittest discover PhaseSync/tests
 
 # Run with coverage
 pytest --cov=PhaseSync
-```
+
 
 ## Contributing
 

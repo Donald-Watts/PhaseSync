@@ -14,7 +14,7 @@ The main module containing core compression functionality.
 
 Compress a word into its symbolic weight.
 
-```python
+
 from PhaseSync.symbol_compressor import compress_word
 
 # Basic usage
@@ -22,7 +22,7 @@ weight = compress_word("Python")  # Returns 8
 
 # With custom mapping
 weight = compress_word("Python", custom_map={"P": 10})  # Returns 9
-```
+
 
 Parameters:
 - `word` (str): The word to compress
@@ -35,7 +35,7 @@ Returns:
 
 Analyze a development phase or find phases by weight.
 
-```python
+
 from PhaseSync.symbol_compressor import analyze_phase
 
 # Analyze phase
@@ -45,7 +45,7 @@ info = analyze_phase("Core Feature Development")
 # Find phases by weight
 phases = analyze_phase(weight=8)
 # Returns: ['Foundation and Definition', 'Core Feature Development', 'Finalization and Product']
-```
+
 
 Parameters:
 - `phase` (Optional[str]): The phase to analyze
@@ -58,7 +58,7 @@ Returns:
 
 Extract phase tags from code.
 
-```python
+`
 from PhaseSync.symbol_compressor import extract_phase_tags
 
 tags = extract_phase_tags("""
@@ -69,7 +69,7 @@ def build_ui():
     pass
 """)
 # Returns: {'phase': 'core', 'task': 'build_web_ui', 'weight': 'high'}
-```
+
 
 Parameters:
 - `code` (str): The code to extract tags from
@@ -81,12 +81,12 @@ Returns:
 
 Analyze phases in a project.
 
-```python
+
 from PhaseSync.symbol_compressor import analyze_project_phases
 
 phases = analyze_project_phases("path/to/project")
 # Returns: Dictionary of phases and their weights
-```
+
 
 Parameters:
 - `project_path` (str): Path to the project directory
@@ -98,12 +98,11 @@ Returns:
 
 Analyze code for review.
 
-```python
 from PhaseSync.symbol_compressor import analyze_code_review
 
 review = analyze_code_review("path/to/code")
 # Returns: Phase information and recommendations
-```
+
 
 Parameters:
 - `code_path` (str): Path to the code file
@@ -121,7 +120,7 @@ Module for visualization and reporting.
 
 Generate compression visualization.
 
-```python
+`
 from PhaseSync.visualizer import visualize_compression
 
 viz = visualize_compression("Python")
@@ -131,7 +130,7 @@ print(viz)
 # P(16) + Y(25) + T(20) + H(8) + O(15) + N(14) = 98
 # 9 + 8 = 17
 # 1 + 7 = 8
-```
+
 
 Parameters:
 - `word` (str): The word to visualize
@@ -143,13 +142,12 @@ Returns:
 
 Generate phase report.
 
-```python
 from PhaseSync.visualizer import generate_phase_report
 
 report = generate_phase_report("Core Feature Development")
 print(report)
 # Output: Detailed phase analysis
-```
+
 
 Parameters:
 - `phase` (str): The phase to report on
@@ -161,11 +159,11 @@ Returns:
 
 Create visualization file.
 
-```python
+
 from PhaseSync.visualizer import create_visualization
 
 create_visualization("Python", "output.png")
-```
+
 
 Parameters:
 - `word` (str): The word to visualize
@@ -180,7 +178,7 @@ Returns:
 
 Class for managing symbol mappings.
 
-```python
+
 from PhaseSync.symbol_compressor import SymbolMap
 
 # Create map
@@ -197,7 +195,7 @@ mapping = symbol_map.get_mapping()
 
 # Update mapping
 symbol_map.update_mapping({"P": 10})
-```
+
 
 #### Methods
 
@@ -233,7 +231,7 @@ Parameters:
 
 Class for phase analysis.
 
-```python
+
 from PhaseSync.symbol_compressor import PhaseAnalyzer
 
 # Create analyzer
@@ -244,7 +242,7 @@ info = analyzer.analyze("Core Feature Development")
 
 # Get phases by weight
 phases = analyzer.get_phases_by_weight(8)
-```
+
 
 #### Methods
 
@@ -276,57 +274,57 @@ Returns:
 
 Base exception for PhaseSync.
 
-```python
+
 from PhaseSync.symbol_compressor import PhaseSyncError
 
 try:
     compress_word("")
 except PhaseSyncError as e:
     print(f"Error: {e}")
-```
+
 
 #### `InvalidInputError`
 
 Raised for invalid input.
 
-```python
+
 from PhaseSync.symbol_compressor import InvalidInputError
 
 try:
     compress_word("")
 except InvalidInputError as e:
     print(f"Invalid input: {e}")
-```
+
 
 #### `FileNotFoundError`
 
 Raised when file not found.
 
-```python
+
 from PhaseSync.symbol_compressor import FileNotFoundError
 
 try:
     analyze_project_phases("nonexistent")
 except FileNotFoundError as e:
     print(f"File not found: {e}")
-```
+
 
 ## Configuration
 
 ### Default Settings
 
-```python
+
 DEFAULT_SETTINGS = {
     "verbose": False,
     "debug": False,
     "output_format": "text",
     "custom_map": None
 }
-```
+
 
 ### Custom Configuration
 
-```python
+
 from PhaseSync.symbol_compressor import configure
 
 configure({
@@ -335,24 +333,24 @@ configure({
     "output_format": "json",
     "custom_map": {"P": 10}
 })
-```
+
 
 ## Type Hints
 
 All functions and classes use Python type hints for better IDE support and code clarity.
 
-```python
+
 from typing import Dict, List, Optional, Union, Any
 
 def compress_word(word: str, custom_map: Optional[Dict[str, int]] = None) -> int:
     pass
-```
+
 
 ## Constants
 
 ### Phase Weights
 
-```python
+
 PHASE_WEIGHTS = {
     "Foundation and Definition": 8,
     "Blueprint and Canonical Structure": 2,
@@ -362,14 +360,13 @@ PHASE_WEIGHTS = {
     "User Interface and Orchestration": 9,
     "Finalization and Product": 8
 }
-```
+
 
 ### Tag Types
 
-```python
+
 TAG_TYPES = {
     "phase": str,
     "task": str,
     "weight": str
 }
-``` 

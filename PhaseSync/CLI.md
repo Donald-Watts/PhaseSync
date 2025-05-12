@@ -6,10 +6,9 @@ The PhaseSync command-line interface provides easy access to all core functional
 
 After installing PhaseSync, the CLI tool is available as `phasesync`:
 
-```bash
 # Verify installation
 phasesync --version
-```
+
 
 ## Available Commands
 
@@ -17,7 +16,7 @@ phasesync --version
 
 Compress words or phrases into their symbolic weights.
 
-```bash
+
 # Basic compression
 phasesync compress "Python"
 
@@ -29,7 +28,7 @@ phasesync compress -v "Python"
 
 # Custom mapping file
 phasesync compress -m custom_map.json "Python"
-```
+
 
 Options:
 - `-v, --verbose`: Show detailed compression steps
@@ -40,7 +39,7 @@ Options:
 
 Analyze development phases and their weights.
 
-```bash
+
 # Analyze a phase
 phasesync analyze "Core Feature Development"
 
@@ -52,7 +51,7 @@ phasesync analyze -d "Core Feature Development"
 
 # Export analysis
 phasesync analyze -o report.json "Core Feature Development"
-```
+
 
 Options:
 - `-w, --weight`: Filter by weight
@@ -64,7 +63,7 @@ Options:
 
 Generate visual representations of compression and phase analysis.
 
-```bash
+
 # Visualize word compression
 phasesync visualize "Python"
 
@@ -76,7 +75,7 @@ phasesync visualize -o output.png "Python"
 
 # Interactive mode
 phasesync visualize -i "Python"
-```
+
 
 Options:
 - `-p, --phase`: Visualize phase instead of word
@@ -88,7 +87,7 @@ Options:
 
 Extract phase tags from code files.
 
-```bash
+
 # Extract from single file
 phasesync extract path/to/file.py
 
@@ -100,7 +99,7 @@ phasesync extract -d path/to/file.py
 
 # Export tags
 phasesync extract -o tags.json path/to/file.py
-```
+
 
 Options:
 - `-d, --details`: Show detailed tag information
@@ -112,7 +111,7 @@ Options:
 
 These options are available for all commands:
 
-```bash
+
 # Show help
 phasesync --help
 phasesync <command> --help
@@ -125,13 +124,13 @@ phasesync --debug <command>
 
 # Version
 phasesync --version
-```
+
 
 ## Examples
 
 ### Basic Usage
 
-```bash
+
 # Compress a word
 phasesync compress "Python"
 # Output: 8
@@ -147,11 +146,11 @@ phasesync visualize "Python"
 # Extract tags
 phasesync extract src/main.py
 # Output: {'phase': 'core', 'task': 'build_web_ui', 'weight': 'high'}
-```
+
 
 ### Advanced Usage
 
-```bash
+
 # Compress with custom mapping
 phasesync compress -m custom_map.json "Python"
 
@@ -163,7 +162,7 @@ phasesync visualize -i "Python" -o output.html
 
 # Extract tags from entire project
 phasesync extract -r -o project_tags.json .
-```
+
 
 ## Error Handling
 
@@ -179,7 +178,7 @@ The CLI provides clear error messages and exit codes:
 
 You can configure the CLI behavior using a configuration file at `~/.phasesync/config.yaml`:
 
-```yaml
+
 defaults:
   verbose: false
   debug: false
@@ -199,7 +198,7 @@ extraction:
     - "*.py"
     - "*.js"
     - "*.ts"
-```
+
 
 ## Troubleshooting
 
@@ -223,7 +222,7 @@ Common issues and solutions:
    - Verify permissions
 
 For more help, run:
-```bash
+
 phasesync --help
 phasesync <command> --help
-``` 
+ 

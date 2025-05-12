@@ -41,26 +41,25 @@ By participating in this project, you agree to abide by our Code of Conduct. Ple
 ### Development Setup
 
 1. Clone the repository:
-   ```bash
+ 
    git clone https://github.com/Donald-Watts/PhaseSync.git
    cd PhaseSync
-   ```
+ 
 
 2. Create a virtual environment:
-   ```bash
+   
    python -m venv .venv
    source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-   ```
+ 
 
 3. Install development dependencies:
-   ```bash
+ 
    pip install -e ".[dev]"
-   ```
-
+ 
 4. Run tests:
-   ```bash
+ 
    python -m unittest discover PhaseSync/tests
-   ```
+
 
 ### Code Style
 

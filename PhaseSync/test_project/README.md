@@ -4,7 +4,7 @@ A simple task management system demonstrating different architectural phases and
 
 ## Project Structure
 
-```
+
 test_project/
 ├── src/
 │   ├── core/
@@ -13,7 +13,7 @@ test_project/
 │       └── logger.py          # Logging utilities
 └── tests/
     └── test_task_manager.py   # Unit tests
-```
+
 
 ## Features
 
@@ -34,13 +34,13 @@ test_project/
 
 ## Running the Tests
 
-```bash
+
 python -m unittest tests/test_task_manager.py
-```
+
 
 ## Example Usage
 
-```python
+
 from src.core.task_manager import TaskManager
 from src.utils.logger import TaskLogger
 
@@ -59,4 +59,4 @@ logger.log_task_completion(task.title)
 # Get summary
 summary = task_manager.get_task_summary()
 print(f"Task Summary: {summary}")
-``` 
+ 
