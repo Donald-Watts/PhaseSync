@@ -130,7 +130,21 @@ See [docs/testing-plan.md](docs/testing-plan.md) for the complete testing protoc
 - [Plugin Documentation](docs/plugin.md)
 
 ## License
-This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENSE) file for details.  Commercial Use Requests
+To request permission for commercial use:
+Email: limited.adls@gmail.com
+Subject: PhaseSync Commercial Use Request
+Include:
+Your name, organization, and role
+Description of commercial use
+Expected scope and duration
+ADLS Consulting will respond with:
+Approval and attribution terms
+Optional licensing fee (if applicable)
+A license key or usage agreement
+Built By
+Donald Watts / ADLS Consulting
+For support, open issues on GitHub or reach out to the author.
 
 ## Acknowledgments
 - ADLS Creations
