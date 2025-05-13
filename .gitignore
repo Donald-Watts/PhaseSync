@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+*.egg-info/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Node
+node_modules/
+dist/
+out/
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.*
+
+# Test/coverage
+.coverage
+htmlcov/
+coverage.xml
+
+# Misc
+*.bak
+*.swp
+*.swo
+*.tmp
+
+# Build
+build/ 
