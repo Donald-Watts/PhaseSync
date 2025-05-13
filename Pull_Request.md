@@ -21,4 +21,4 @@
 
 **Contributor Info (optional):**
 - GitHub:
-- Website/Twitter:
+- Email, Website , Twitter / X :
