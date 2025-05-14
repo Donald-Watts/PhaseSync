@@ -1,0 +1,29 @@
+# Exclude node_modules except production dependencies
+**/node_modules/**
+!node_modules/python-shell/**
+
+# Exclude source TypeScript files
+src/**
+
+# Exclude test files and folders
+**/*.test.*
+**/test/**
+
+# Exclude config and lock files not needed in the package
+*.log
+*.tsbuildinfo
+package-lock.json
+
+# Exclude scripts and other non-extension files
+scripts/**
+
+# Exclude version control and environment files
+.git/**
+.vscode/**
+.env
+.venv/**
+
+# Exclude coverage and benchmark files
+coverage/**
+.benchmarks/**
+.pytest_cache/** 

@@ -3,7 +3,9 @@
 
 import sys
 import json
+import os
 from typing import Dict, List, Union
+from pathlib import Path
 
 # Character mapping for SWP
 CHAR_MAP = {
@@ -50,6 +52,12 @@ def analyze_file(file_path: str) -> Dict[str, Union[str, List[int], int]]:
             "success": False
         }
 
+def export_weights(weights: Dict[str, Union[str, List[int], int]], output_path: str):
+    """Export weights to a JSON file."""
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(weights, f, indent=2)
+    print("Exported weight manifest")
+
 def main():
     """Main entry point for the script."""
     if len(sys.argv) != 2:
@@ -61,6 +69,11 @@ def main():
 
     file_path = sys.argv[1]
     result = analyze_file(file_path)
+    
+    # Export weights to weights.json in the same directory as the input file
+    output_path = str(Path(file_path).parent / 'weights.json')
+    export_weights(result, output_path)
+    
     print(json.dumps(result))
 
 if __name__ == "__main__":
