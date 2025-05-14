@@ -120,6 +120,14 @@ def calculate_weight(label):
         "sum": sum(compressed),
     }
 
+### File Metadata Requirements
+- All files must include `@phase` and `@weight` metadata in their header.
+- The `@weight` tag should include both the raw sum and the reduced sum (digital root) as calculated by the SWP.
+- Example:
+  ```
+  # @phase: Core Feature Development
+  # @weight: Raw sum: 353, Reduced sum (digital root): 2
+  ```
 
 ## Development Standards
 

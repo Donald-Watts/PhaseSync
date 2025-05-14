@@ -1,0 +1,62 @@
+{
+  "_comment": "Component Diagram for PhaseSync\n@phase: Blueprint and Canonical Structure\n@weight: Raw sum: 353, Reduced sum (digital root): 2\nLicensed under the Apache License, Version 2.0 (the 'License'); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.",
+  "components": [
+    {
+      "id": "swp_engine",
+      "name": "SWP Engine",
+      "type": "Python Module",
+      "description": "Implements the Symbolic Weight Protocol (SWP) for text compression and weight analysis."
+    },
+    {
+      "id": "ide_extension",
+      "name": "IDE Extension",
+      "type": "TypeScript/Node.js",
+      "description": "Provides UI, commands, and automation for Cursor IDE and VS Code."
+    },
+    {
+      "id": "cli",
+      "name": "Command-Line Interface (CLI)",
+      "type": "Python Script",
+      "description": "Allows direct access to SWP Engine functions from the command line."
+    },
+    {
+      "id": "bridge",
+      "name": "Bridge",
+      "type": "Node.js Module",
+      "description": "Handles communication between the IDE Extension and the SWP Engine (e.g., via python-shell)."
+    },
+    {
+      "id": "rpc",
+      "name": "RPC Interface",
+      "type": "Python/Node.js",
+      "description": "Enables remote procedure calls for advanced integration."
+    }
+  ],
+  "relationships": [
+    {
+      "from": "ide_extension",
+      "to": "bridge",
+      "type": "communicates_with"
+    },
+    {
+      "from": "bridge",
+      "to": "swp_engine",
+      "type": "invokes"
+    },
+    {
+      "from": "cli",
+      "to": "swp_engine",
+      "type": "invokes"
+    },
+    {
+      "from": "ide_extension",
+      "to": "rpc",
+      "type": "uses"
+    },
+    {
+      "from": "rpc",
+      "to": "swp_engine",
+      "type": "invokes"
+    }
+  ]
+} 

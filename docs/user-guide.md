@@ -1,7 +1,7 @@
 # User Guide for PhaseSync
 #
 # @phase: Foundation and Definition
-# @weight: TBD
+# @weight: Raw sum: 243, Reduced sum (digital root): 9 
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
