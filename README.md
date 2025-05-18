@@ -4,7 +4,8 @@
 [![Cursor IDE](https://img.shields.io/badge/Cursor-IDE-1.10.0%2B-green)](https://cursor.sh)
 
 ## Overview
-PhaseSync is a powerful development tool that implements the Symbolic Weight Protocol (SWP) to help manage and organize large codebases, particularly in AI-centric development environments. It provides architectural control through symbolic compression and phase-based organization.
+PhaseSync is a powerful development tool that implements the Symbolic Weight Protocol (SWP) to help manage and organize large codebases, particularly in AI-centric development environments. It provides architectural control through symbolic compression and phase-based organization. This is an experimental project under active development. It is not yet stable, may contain bugs, incomplete features, or undergo breaking changes. We're building it in the open with the community and welcome:
+
 
 ## Features
 - **Semantic Tag Scanning**: Automatically scan codebases for @phase and @weight tags
