@@ -153,7 +153,7 @@ For support, open issues on GitHub or reach out to the author.
 ## Acknowledgments
 - ADLS Creations
 - Donald Watts
-- The Cursor IDE team
+
 
 ## Support
 - [GitHub Issues](https://github.com/Donald-Watts/PhaseSync/issues)
